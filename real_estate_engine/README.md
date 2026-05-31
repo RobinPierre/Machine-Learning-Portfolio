@@ -16,45 +16,45 @@ flowchart TD
 
 
 
-&#x20;   A\[Data Sources\\n- CSV\\n- APIs\\n- Zillow/Redfin\\n- Manual Inputs] --> B
+   A\[Data Sources\n- CSV\n- APIs\n- Zillow/Redfin\n- Manual Inputs] --> B
 
 
 
-&#x20;   B\[Ingestion Layer\\n- Manifest Tracking\\n- Validation\\n- Loaders] --> C
+   B\[Ingestion Layer\n- Manifest Tracking\n- Validation\n- Loaders] --> C
 
 
 
-&#x20;   C\[Feature Engineering\\n- Cleaning\\n- Transformations\\n- Feature Sets] --> D
+   C\[Feature Engineering\n- Cleaning\n- Transformations\n- Feature Sets] --> D
 
 
 
-&#x20;   subgraph P\[Prediction Layer]
+   subgraph P\[Prediction Layer]
 
-&#x20;       D --> P1\[Rent Model]
+       D --> P1\[Rent Model]
 
-&#x20;       D --> P2\[Price Model]
+       D --> P2\[Price Model]
 
-&#x20;       D --> P3\[Vacancy Forecast\\n(Time Series)]
+       D --> P3\[Vacancy Forecast -Time Series]
 
-&#x20;       D --> P4\[Appreciation Forecast\\n(Time Series)]
+       D --> P4\[Appreciation Forecast - Time Series]
 
-&#x20;   end
-
-
-
-&#x20;   P --> E\[Scoring Layer\\n- Risk Model\\n- Tolerance Mapping\\n- Utility Function\\n- Composite Score]
+   end
 
 
 
-&#x20;   E --> F\[Simulation Layer\\n- Monte Carlo\\n- Scenario Shocks\\n- Stress Tests]
+   P --> E\[Scoring Layer\n- Risk Model\n- Tolerance Mapping\n- Utility Function\n- Composite Score]
 
 
 
-&#x20;   F --> G\[Ranking Engine\\n- Sort by Score\\n- Explanations\\n- Top-N Selection]
+   E --> F\[Simulation Layer\n- Monte Carlo\n- Scenario Shocks\n- Stress Tests]
 
 
 
-&#x20;   G --> H\[UI Layer\\n(Streamlit / FastAPI)\\n- Property View\\n- Score Breakdown\\n- Scenario Explorer]
+   F --> G\[Ranking Engine\n- Sort by Score\n- Explanations\n- Top-N Selection]
+
+
+
+   G --> H\[UI Layer\n -- Streamlit / FastAPI\n- Property View\n- Score Breakdown\n- Scenario Explorer]
 
 
 
